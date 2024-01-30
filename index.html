@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Cards with Background Images</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="animated_cards.css">
+    <style>
+        /* Additional inline styles can be added here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding: 20px;
+        }
+
+        /* Style for the container holding the cards */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Style for the individual card */
+        .card {
+            width: 50px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.4s ease-in-out; /* Smooth transition effect */
+            background-size: cover;
+            background-position: center;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Style for the card content */
+        .card-content {
+            padding: 20px;
+            transition: all 0.4s ease-in-out; /* Smooth transition effect */
+        }
+
+        /* Define the expanded state of the card */
+        .card:hover {
+            width: 400px; /* Expand width on hover */
+            height: 200px; /* Expand height on hover */
+        }
+
+        /* Define the expanded state of the card content */
+        .card:hover .card-content {
+            padding: 30px; /* Adjust padding on hover */
+        }
+
+        /* Add shadow effect on hover */
+        .card:hover {
+            //box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow effect on hover */
+			box-shadow:
+  0.4px 0.6px 2.5px -12px rgba(0, 0, 0, 0.013),
+  0.9px 1.3px 4.8px -12px rgba(0, 0, 0, 0.02),
+  1.6px 2.1px 6.8px -12px rgba(0, 0, 0, 0.024),
+  2.5px 3.3px 8.6px -12px rgba(0, 0, 0, 0.028),
+  3.6px 4.9px 10.4px -12px rgba(0, 0, 0, 0.032),
+  5.4px 7.1px 12.1px -12px rgba(0, 0, 0, 0.036),
+  8px 10.7px 14.4px -12px rgba(0, 0, 0, 0.04),
+  12.8px 17.1px 18.3px -12px rgba(0, 0, 0, 0.047),
+  24px 32px 30px -12px rgba(0, 0, 0, 0.06)
+;
+        }
+		@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+* {
+	margin: 0;
+	padding-left: -200;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	display: flex;
+	background: #f8f8f8;
+	min-height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.content {
+	position: relative;
+}
+
+.content h2 {
+	color: #fff;
+	font-size: 4em;
+	position:absolute;
+	padding-top:200;
+	transform: translate(-50%, -50%);
+}
+
+.content h2:nth-child(1) {
+	color: transparent;
+	position:absolute;
+	padding-top:200;
+	-webkit-text-stroke: 2px #808080;
+}
+
+.content h2:nth-child(2) {
+	color: #c8c8c8;
+	position:absolute;
+	animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+	0%,
+	100% {
+		clip-path: polygon(
+			0% 45%,
+			16% 44%,
+			33% 50%,
+			54% 60%,
+			70% 61%,
+			84% 59%,
+			100% 52%,
+			100% 100%,
+			0% 100%
+		);
+	}
+
+	50% {
+		clip-path: polygon(
+			0% 50%,
+			15% 65%,
+			34% 66%,
+			51% 62%,
+			67% 50%,
+			84% 45%,
+			100% 46%,
+			100% 100%,
+			0% 100%
+		);
+	}
+}
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+* {
+  padding-top: 300;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Montserrat Medium";
+  max-width: 40ch;
+  text-align: center;
+  transform: scale(0.94);
+  animation: scale 5s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+}
+
+span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(2) {
+  animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(3) {
+  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(4) {
+  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(5) {
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(6) {
+  animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(7) {
+  animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(8) {
+  animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(9) {
+  animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(10) {
+  animation: fade-in 0.8s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(11) {
+  animation: fade-in 0.8s 1.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(12) {
+  animation: fade-in 0.8s 1.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(13) {
+  animation: fade-in 0.8s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(14) {
+  animation: fade-in 0.8s 1.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(15) {
+  animation: fade-in 0.8s 1.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(16) {
+  animation: fade-in 0.8s 1.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(17) {
+  animation: fade-in 0.8s 1.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(18) {
+  animation: fade-in 0.8s 1.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+
+    </style>
+</head>
+<body>
+<section>
+
+	<div class="content">
+		<h2>LIFE</h2>
+		<h2>LIFE</h2>
+		</div>
+		</section>
+		<section>
+    <!-- Container for the cards -->
+    <div class="card-container">
+        <!-- First card -->
+		
+		
+		
+        <div class="card" style="background-image: url('image-1.jpg');">
+            <div class="card-content">
+                <!-- Card content goes here -->
+                
+            </div>
+        </div>
+        <!-- Second card -->
+        <div class="card" style="background-image: url('image-2.jpg');">
+            <div class="card-content">
+                <!-- Card content goes here -->
+                
+            </div>
+        </div>
+        <!-- Add more cards as needed -->
+    </div>
+	</section>
+	<section>
+	<h1>
+  <span>There</span>
+  <span>are</span>
+  <span>no</span>
+  <span>limits</span>
+  <span>to</span>
+  <span>what</span>
+  <span>you</span>
+  <span>can</span>
+  <span>accomplish,</span>
+  <span>except</span>
+  <span>the</span>
+  <span>limits</span>
+  <span>you</span>
+  <span>place</span>
+  <span>on</span>
+  <span>your</span>
+  <span>own</span>
+  <span>thinking.</span>
+</h1>
+<!--Brian Tracy-->
+</section>
+<section>
+</section>
+</body>
+</html>
